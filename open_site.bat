@@ -1,0 +1,3 @@
+@echo off
+echo Opening OPIVAMP website in your default browser...
+start "" "%~dp0index.html"

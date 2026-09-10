@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book a Funding Consultation with Victor Peter | OPIVAMP</title>
+  <meta name="description" content="Schedule a 30-minute strategic funding consultation with Victor Peter, Founder & Funding Strategist at OPIVAMP. Evaluate eligibility and grant pipeline strategy.">
+  <link rel="canonical" href="https://opivamp.com/consultation.html">
+
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <style>
+    .time-slot-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-3);
+      margin-top: var(--space-3);
+    }
+    .time-slot-pill {
+      padding: 0.65rem 0.5rem;
+      text-align: center;
+      border: 1px solid var(--color-slate-300);
+      border-radius: var(--radius-md);
+      font-size: var(--text-xs);
+      font-weight: 600;
+      color: var(--color-slate-700);
+      background: var(--color-slate-50);
+      cursor: pointer;
+      transition: all var(--transition-fast);
+    }
+    .time-slot-pill:hover {
+      border-color: var(--color-blue-600);
+      background: var(--color-blue-50);
+      color: var(--color-blue-700);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(37,99,235,0.18);
+    }
+    .time-slot-pill.selected {
+      background: var(--color-blue-600);
+      color: var(--color-white);
+      border-color: var(--color-blue-600);
+      box-shadow: 0 4px 14px rgba(37,99,235,0.4);
+      transform: translateY(-1px);
+    }
+    @media (max-width: 600px) {
+      .time-slot-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="OPIVAMP Homepage">
+        <div class="logo-symbol">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <div class="brand-name">
+          <span class="brand-title">OPIVAMP</span>
+          <span class="brand-tagline">Funding Strategy & Grants</span>
+        </div>
+      </a>
+
+            <!-- Compact, Decent Desktop Navigation with Dropdowns -->
+      <nav class="nav-menu" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+
+        <!-- Dropdown: Who We Serve -->
+        <div class="nav-item-dropdown">
+          <button class="dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+            <span>Who We Serve</span>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="nonprofits.html" class="dropdown-item">
+              <div class="dropdown-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div class="dropdown-item-text">
+                <span class="dropdown-item-title">For Nonprofits</span>
+                <span class="dropdown-item-desc">501(c)(3) & Community Grants</span>
+              </div>
+            </a>
+            <a href="businesses.html" class="dropdown-item">
+              <div class="dropdown-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+              <div class="dropdown-item-text">
+                <span class="dropdown-item-title">For Businesses</span>
+                <span class="dropdown-item-desc">Non-Dilutive & Growth Grants</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Dropdown: Services & Approach -->
+        <div class="nav-item-dropdown">
+          <button class="dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+            <span>Services & Process</span>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="services.html" class="dropdown-item">
+              <div class="dropdown-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              </div>
+              <div class="dropdown-item-text">
+                <span class="dropdown-item-title">Our Services</span>
+                <span class="dropdown-item-desc">Research, Proposals & Reporting</span>
+              </div>
+            </a>
+            <a href="process.html" class="dropdown-item">
+              <div class="dropdown-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <div class="dropdown-item-text">
+                <span class="dropdown-item-title">Our 3-Phase Process</span>
+                <span class="dropdown-item-desc">From Discovery to Reporting</span>
+              </div>
+            </a>
+            <a href="pricing.html" class="dropdown-item">
+              <div class="dropdown-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+              </div>
+              <div class="dropdown-item-text">
+                <span class="dropdown-item-title">Pricing & Packages</span>
+                <span class="dropdown-item-desc">Transparent Rates & Estimator</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Dropdown: Advisory & Tools -->
+        <div class="nav-item-dropdown">
+          <button class="dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+            <span>Advisory Tools</span>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/></svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="readiness.html" class="dropdown-item">
+              <div class="dropdown-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              </div>
+              <div class="dropdown-item-text">
+                <span class="dropdown-item-title">Funding Readiness Tool</span>
+                <span class="dropdown-item-desc">Interactive Score & Checklist</span>
+              </div>
+            </a>
+            <a href="results.html" class="dropdown-item">
+              <div class="dropdown-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+              </div>
+              <div class="dropdown-item-text">
+                <span class="dropdown-item-title">Results & Case Studies</span>
+                <span class="dropdown-item-desc">Verified Sector Frameworks</span>
+              </div>
+            </a>
+            <a href="resources.html" class="dropdown-item">
+              <div class="dropdown-item-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+              </div>
+              <div class="dropdown-item-text">
+                <span class="dropdown-item-title">Knowledge Center</span>
+                <span class="dropdown-item-desc">Guides, Articles & Strategies</span>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <a href="about.html" class="nav-link">About</a>
+        <a href="faq.html" class="nav-link">FAQ</a>
+      </nav>
+
+      <div class="header-cta-group">
+        <a href="contact.html" class="btn btn-secondary btn-sm">Contact</a>
+        <a href="consultation.html" class="btn btn-primary btn-sm active">Book Consultation</a>
+        <button class="mobile-toggle" aria-label="Open Navigation Menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer-overlay"></div>
+  <aside class="mobile-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-drawer-header">
+      <div class="brand-title">OPIVAMP</div>
+      <button class="mobile-drawer-close" aria-label="Close menu" style="background:none; border:none; font-size:1.5rem; cursor:pointer;">&times;</button>
+    </div>
+    <nav class="mobile-nav-list">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="about.html" class="mobile-nav-link">About</a>
+      <a href="services.html" class="mobile-nav-link">Services</a>
+      <a href="nonprofits.html" class="mobile-nav-link">For Nonprofits</a>
+      <a href="businesses.html" class="mobile-nav-link">For Businesses</a>
+      <a href="process.html" class="mobile-nav-link">Our Process</a>
+      <a href="readiness.html" class="mobile-nav-link">Funding Readiness</a>
+      <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+      <a href="results.html" class="mobile-nav-link">Results & Studies</a>
+      <a href="resources.html" class="mobile-nav-link">Resources</a>
+      <a href="faq.html" class="mobile-nav-link">FAQ</a>
+      <a href="contact.html" class="mobile-nav-link">Contact</a>
+    </nav>
+    <a href="consultation.html" class="btn btn-primary btn-lg" style="width:100%;">Book a Consultation</a>
+  </aside>
+
+  <main id="main-content">
+    <!-- Hero Header -->
+    <section class="section bg-light" style="padding-top: calc(var(--space-16) + 1rem); padding-bottom: var(--space-12);">
+      <div class="container container-narrow text-center">
+        <div class="section-eyebrow">Strategic Discovery Session</div>
+        <h1 class="section-title">Book a Funding Consultation</h1>
+        <p class="section-subtitle">
+          Schedule a direct 30-minute advisory conversation with Victor Peter to evaluate your funding eligibility, discuss upcoming grant deadlines, and outline a tailored funding roadmap.
+        </p>
+      </div>
+    </section>
+
+    <!-- Interactive Consultation Booking Workflow -->
+    <section class="section bg-white">
+      <div class="container">
+        <div class="grid grid-2" style="gap: var(--space-12); align-items: flex-start;">
+          
+          <!-- Booking Form -->
+          <div class="form-card">
+            
+            <!-- Optional pre-fill notice if referred from readiness calculator -->
+            <div id="prefillReadinessNotice" style="display: none; background: var(--color-blue-50); border: 1px solid var(--color-blue-200); padding: 0.75rem 1rem; border-radius: 8px; margin-bottom: 1.5rem; font-size: 0.85rem; color: var(--color-navy-950);">
+            </div>
+
+            <h3 style="margin-bottom: var(--space-2); color: var(--color-navy-950);">Select Your Consultation Details</h3>
+            <p style="font-size: 0.875rem; color: var(--color-slate-600); margin-bottom: var(--space-6);">
+              All consultations are conducted via Google Meet, Zoom, or direct phone call.
+            </p>
+
+            <form id="consultationBookingForm">
+              <input type="hidden" id="selectedTimeSlot" name="selectedTimeSlot" value="10:00 AM EST">
+
+              <!-- Date & Time Selection -->
+              <div class="form-group">
+                <label for="preferredDate">Select Preferred Date <span class="required">*</span></label>
+                <input type="date" id="preferredDate" name="preferredDate" class="form-control" required>
+              </div>
+
+              <div class="form-group">
+                <label>Available Advisory Slots (EST) <span class="required">*</span></label>
+                <div class="time-slot-grid">
+                  <div class="time-slot-pill selected" data-time="10:00 AM EST">10:00 AM EST</div>
+                  <div class="time-slot-pill" data-time="11:30 AM EST">11:30 AM EST</div>
+                  <div class="time-slot-pill" data-time="1:30 PM EST">1:30 PM EST</div>
+                  <div class="time-slot-pill" data-time="3:00 PM EST">3:00 PM EST</div>
+                  <div class="time-slot-pill" data-time="4:15 PM EST">4:15 PM EST</div>
+                  <div class="time-slot-pill" data-time="5:00 PM EST">5:00 PM EST</div>
+                </div>
+              </div>
+
+              <!-- Organization & Contact Details -->
+              <div class="form-grid-2" style="margin-top: var(--space-6);">
+                <div class="form-group">
+                  <label for="clientName">Your Name <span class="required">*</span></label>
+                  <input type="text" id="clientName" name="clientName" class="form-control" placeholder="Eleanor Vance" required>
+                </div>
+                <div class="form-group">
+                  <label for="clientEmail">Email Address <span class="required">*</span></label>
+                  <input type="email" id="clientEmail" name="clientEmail" class="form-control" placeholder="name@organization.org" required>
+                </div>
+              </div>
+
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label for="organizationName">Organization Name <span class="required">*</span></label>
+                  <input type="text" id="organizationName" name="organizationName" class="form-control" placeholder="Hope Community Services" required>
+                </div>
+                <div class="form-group">
+                  <label for="organizationType">Organization Type <span class="required">*</span></label>
+                  <select id="organizationType" name="organizationType" class="form-control" required>
+                    <option value="Nonprofit">Nonprofit Organization / 501(c)(3)</option>
+                    <option value="For-profit">For-profit Business / LLC / Corp</option>
+                    <option value="Social enterprise">Social Enterprise</option>
+                    <option value="Other">Other Institutional Entity</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label for="fundingType">Primary Discussion Focus</label>
+                  <select id="fundingType" name="fundingType" class="form-control">
+                    <option value="Grant Research & Opportunity Identification">Grant Research & Opportunity Identification</option>
+                    <option value="Full Grant Proposal Development">Full Grant Proposal Development</option>
+                    <option value="Annual Funding Strategy & Calendar">Annual Funding Strategy & Calendar</option>
+                    <option value="Review of Existing Proposal Draft">Review of Existing Proposal Draft</option>
+                    <option value="General Funding Readiness Advisory">General Funding Readiness Advisory</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="consultationStage">Current Stage</label>
+                  <input type="text" id="consultationStage" name="consultationStage" class="form-control" placeholder="e.g. Planning first grant or scaling">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="consultationMessage">Specific Topics or Deadlines</label>
+                <textarea id="consultationMessage" name="message" class="form-control" placeholder="Share any imminent grant deadlines, target funding amounts, or specific questions you wish to focus on..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">
+                Confirm & Request Consultation Slot
+              </button>
+            </form>
+          </div>
+
+          <!-- Advisory Session Overview -->
+          <div>
+            <div class="card" style="margin-bottom: var(--space-6);">
+              <h3 style="color: var(--color-navy-950); margin-bottom: var(--space-4);">What We Will Cover:</h3>
+              <ul style="display: flex; flex-direction: column; gap: var(--space-4); font-size: 0.9rem; color: var(--color-slate-700);">
+                <li style="display: flex; gap: var(--space-3); align-items: flex-start;">
+                  <div style="width: 24px; height: 24px; border-radius: 50%; background: var(--color-blue-50); color: var(--color-blue-600); display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">1</div>
+                  <div>
+                    <strong style="color: var(--color-navy-950); display: block;">Eligibility & Structural Assessment</strong>
+                    <span>Review your organizational legal structure, programs, and financial history against standard funder requirements.</span>
+                  </div>
+                </li>
+                <li style="display: flex; gap: var(--space-3); align-items: flex-start;">
+                  <div style="width: 24px; height: 24px; border-radius: 50%; background: var(--color-blue-50); color: var(--color-blue-600); display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">2</div>
+                  <div>
+                    <strong style="color: var(--color-navy-950); display: block;">High-Potential Funding Pathways</strong>
+                    <span>Identify whether your immediate opportunity lies in private foundations, corporate CSR, or government grant programs.</span>
+                  </div>
+                </li>
+                <li style="display: flex; gap: var(--space-3); align-items: flex-start;">
+                  <div style="width: 24px; height: 24px; border-radius: 50%; background: var(--color-blue-50); color: var(--color-blue-600); display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">3</div>
+                  <div>
+                    <strong style="color: var(--color-navy-950); display: block;">Realistic Timeline & Effort Scoping</strong>
+                    <span>Understand the research, narrative development, and documentation timeline required for upcoming grant deadlines.</span>
+                  </div>
+                </li>
+                <li style="display: flex; gap: var(--space-3); align-items: flex-start;">
+                  <div style="width: 24px; height: 24px; border-radius: 50%; background: var(--color-blue-50); color: var(--color-blue-600); display: flex; align-items: center; justify-content: center; font-weight: 700; flex-shrink: 0;">4</div>
+                  <div>
+                    <strong style="color: var(--color-navy-950); display: block;">Actionable Next Steps</strong>
+                    <span>Leave with clear, actionable recommendations whether you choose to partner with OPIVAMP or execute internally.</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="card" style="background: var(--color-slate-50); border: 1px solid var(--color-slate-200);">
+              <div style="display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-3);">
+                <img src="assets/images/founder-portrait.svg" alt="Victor Peter" style="width: 54px; height: 54px; border-radius: 50%;">
+                <div>
+                  <h4 style="margin: 0; font-size: 1.05rem;">Victor Peter</h4>
+                  <div style="font-size: 0.8rem; color: var(--color-blue-600); font-weight: 600;">Founder & Funding Strategist</div>
+                </div>
+              </div>
+              <p style="font-size: 0.85rem; color: var(--color-slate-600); line-height: 1.5; margin: 0;">
+                "Our discovery consultations are focused, strategy-driven sessions. We don't use aggressive sales pitches. We evaluate your goals candidly and determine whether an aligned funding opportunity genuinely exists."
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Confirmation Modal -->
+    <div id="bookingConfirmationModal" class="modal-backdrop" aria-hidden="true" role="dialog">
+      <div class="modal-box">
+        <button id="closeModalBtn" class="modal-close-btn" aria-label="Close dialog">&times;</button>
+        <div style="text-align: center; margin-bottom: var(--space-4);">
+          <div style="width: 56px; height: 56px; background: var(--color-success-bg); color: var(--color-success); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-3);">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3 style="color: var(--color-navy-950); margin-bottom: var(--space-1);">Consultation Slot Reserved</h3>
+          <p style="font-size: 0.875rem; color: var(--color-slate-600);">
+            Your request has been received. Victor Peter will review your submission and email calendar confirmation and meeting link details within 1 business day.
+          </p>
+        </div>
+
+        <div id="bookingSummaryDetails">
+          <!-- Populated by JavaScript -->
+        </div>
+
+        <div style="display: flex; gap: var(--space-3); justify-content: center;">
+          <a href="index.html" class="btn btn-primary" style="width: 100%;">Return to Home</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo" style="color: var(--color-white);">
+            <div class="logo-symbol">
+              <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </div>
+            <div class="brand-name">
+              <span class="brand-title">OPIVAMP</span>
+              <span class="brand-tagline" style="color: #60a5fa;">Funding Strategy & Grants</span>
+            </div>
+          </div>
+          <p>
+            A boutique funding strategy and grant consulting firm supporting nonprofit organizations and commercial ventures through strategic research, proposal architecture, and sustainable pipeline development.
+          </p>
+          <p style="font-size: 0.8125rem; color: #94a3b8;">
+            Led by <strong>Victor Peter</strong>, Founder & Funding Strategist.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Solutions</h4>
+          <div class="footer-links">
+            <a href="nonprofits.html" class="footer-link">For Nonprofits</a>
+            <a href="businesses.html" class="footer-link">For Businesses</a>
+            <a href="services.html#research" class="footer-link">Grant Research</a>
+            <a href="services.html#applications" class="footer-link">Proposal Development</a>
+            <a href="services.html#strategy" class="footer-link">Funding Strategy</a>
+            <a href="services.html#reporting" class="footer-link">Post-Award Reporting</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Advisory & Tools</h4>
+          <div class="footer-links">
+            <a href="about.html" class="footer-link">About OPIVAMP</a>
+            <a href="process.html" class="footer-link">Our 3-Phase Process</a>
+            <a href="readiness.html" class="footer-link">Funding Readiness Tool</a>
+            <a href="pricing.html" class="footer-link">Pricing & Calculator</a>
+            <a href="results.html" class="footer-link">Results & Case Studies</a>
+            <a href="resources.html" class="footer-link">Knowledge Center</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Connect</h4>
+          <div class="footer-links">
+            <a href="consultation.html" class="footer-link">Book a Consultation</a>
+            <a href="contact.html" class="footer-link">Request Assessment</a>
+            <a href="faq.html" class="footer-link">Frequently Asked Questions</a>
+            <a href="privacy.html" class="footer-link">Privacy Policy</a>
+            <a href="terms.html" class="footer-link">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 OPIVAMP. All rights reserved. Strategic Funding & Grant Consulting.</div>
+        <div style="display: flex; gap: var(--space-4);">
+          <a href="privacy.html" style="color: var(--color-slate-400);">Privacy</a>
+          <a href="terms.html" style="color: var(--color-slate-400);">Terms</a>
+          <a href="contact.html" style="color: var(--color-slate-400);">Contact</a>
+        </div>
+      </div>
+      <p class="footer-legal-note">
+        Disclaimer: OPIVAMP provides strategic advisory, research, and proposal development services. OPIVAMP does not guarantee grant awards or funding outcomes, as all funding decisions are made solely at the discretion of independent funders, foundations, and government awarding bodies.
+      </p>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/consultation.js"></script>
+  <script>
+    // Set default date to tomorrow's working date
+    document.addEventListener('DOMContentLoaded', () => {
+      const dateInput = document.getElementById('preferredDate');
+      if (dateInput) {
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        if (tomorrow.getDay() === 0) tomorrow.setDate(tomorrow.getDate() + 1); // skip Sunday
+        if (tomorrow.getDay() === 6) tomorrow.setDate(tomorrow.getDate() + 2); // skip Saturday
+        dateInput.value = tomorrow.toISOString().split('T')[0];
+        dateInput.min = tomorrow.toISOString().split('T')[0];
+      }
+    });
+  </script>
+</body>
+</html>
+

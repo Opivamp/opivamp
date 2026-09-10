@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" fill="none">
+  <defs>
+    <linearGradient id="avatarBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0A192F" />
+      <stop offset="100%" stop-color="#1E3A8A" />
+    </linearGradient>
+  </defs>
+  <circle cx="100" cy="100" r="96" fill="url(#avatarBg)" stroke="#2563EB" stroke-width="4"/>
+  <!-- Stylized Executive Monogram VP with Shield Crest -->
+  <path d="M70 70L100 135L130 70" stroke="#FFFFFF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M100 100V135" stroke="#F59E0B" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="100" cy="55" r="8" fill="#F59E0B"/>
+</svg>
