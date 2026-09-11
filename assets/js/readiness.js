@@ -144,8 +144,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       const config = typeof OPIVAMP_FORM_CONFIG !== 'undefined' ? OPIVAMP_FORM_CONFIG : {
-        recipientEmail: 'inquiries@opivamp.com',
-        getEndpoint: () => 'https://formsubmit.co/ajax/inquiries@opivamp.com',
+        recipientEmail: 'opivamp@opivamp.com',
+        getEndpoint: () => 'https://formsubmit.co/ajax/opivamp@opivamp.com',
         subjects: { readiness: 'Funding Readiness Assessment Report' },
         autoresponse: { readiness: 'Thank you for completing your readiness assessment with OPIVAMP.' }
       };

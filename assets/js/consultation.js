@@ -124,8 +124,8 @@ function initConsultationForm() {
 
     // Format clean payload for FormSubmit email table
     const config = typeof OPIVAMP_FORM_CONFIG !== 'undefined' ? OPIVAMP_FORM_CONFIG : {
-      recipientEmail: 'inquiries@opivamp.com',
-      getEndpoint: () => 'https://formsubmit.co/ajax/inquiries@opivamp.com',
+      recipientEmail: 'opivamp@opivamp.com',
+      getEndpoint: () => 'https://formsubmit.co/ajax/opivamp@opivamp.com',
       subjects: { consultation: 'New Strategy Consultation Booking' },
       autoresponse: { consultation: 'Thank you for scheduling with OPIVAMP.' }
     };
@@ -292,8 +292,8 @@ function initContactForm() {
     }
 
     const config = typeof OPIVAMP_FORM_CONFIG !== 'undefined' ? OPIVAMP_FORM_CONFIG : {
-      recipientEmail: 'inquiries@opivamp.com',
-      getEndpoint: () => 'https://formsubmit.co/ajax/inquiries@opivamp.com',
+      recipientEmail: 'opivamp@opivamp.com',
+      getEndpoint: () => 'https://formsubmit.co/ajax/opivamp@opivamp.com',
       subjects: { contact: 'New Strategic Funding Assessment Request' },
       autoresponse: { contact: 'Thank you for contacting OPIVAMP.' }
     };

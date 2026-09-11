@@ -18,10 +18,10 @@
 
 const OPIVAMP_FORM_CONFIG = {
   // Primary email address to receive all submissions
-  recipientEmail: "opivamp@gmail.com",
+  recipientEmail: "opivamp@opivamp.com",
 
-  // Optional secondary email to CC (leave as "" if none)
-  ccEmail: "",
+  // Optional secondary email to CC (receives automatic copy)
+  ccEmail: "opivamp@gmail.com",
 
   // Business branding
   businessName: "OPIVAMP Funding Strategy & Grant Consulting",
