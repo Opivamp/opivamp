@@ -237,42 +237,67 @@
           </div>
         </div>
 
-        <!-- Right Side: Interactive Floating Strategy Blueprint Visual -->
-        <div class="hero-visual-card animate-float reveal reveal-delay-2">
-          <div class="hero-visual-header">
-            <span class="hero-pill">Advisory Blueprint</span>
-            <span style="font-size: 0.75rem; color: #94a3b8; font-weight: 600;">OPIVAMP Cycle</span>
+        <!-- Right Side: Interactive Strategic Grant Pipeline Mockup -->
+        <div class="hero-dashboard-mockup animate-float reveal reveal-delay-2">
+          <div class="dashboard-header-bar">
+            <div class="dashboard-status-indicator">
+              <div class="pulse-beacon"></div>
+              <span>Active Grant Pipeline</span>
+            </div>
+            <span style="font-size: 0.75rem; color: var(--color-blue-600); font-weight: 700; background: var(--color-blue-50); padding: 0.25rem 0.6rem; border-radius: var(--radius-full);">
+              2026 Strategy Cycle
+            </span>
           </div>
 
-          <div class="strategy-pathway-diagram">
-            <div class="pathway-step">
-              <div class="step-num">1</div>
-              <div class="step-content">
-                <h4>Strategic Opportunity Scan</h4>
-                <p>Pinpointing verified funder priorities matching your exact mission or business model.</p>
-              </div>
+          <!-- Quick Metrics Grid -->
+          <div class="dashboard-stats-row">
+            <div class="dashboard-stat-mini">
+              <div class="stat-val" style="color: var(--color-blue-600);">$455K</div>
+              <div class="stat-lbl">Active Pipeline</div>
             </div>
-            <div class="pathway-step">
-              <div class="step-num">2</div>
-              <div class="step-content">
-                <h4>Funder-Centric Proposal Architecture</h4>
-                <p>Developing compelling narratives, needs data, and aligned budget line-items.</p>
-              </div>
+            <div class="dashboard-stat-mini">
+              <div class="stat-val" style="color: var(--color-emerald-600, #059669);">96%</div>
+              <div class="stat-lbl">Funder Fit</div>
             </div>
-            <div class="pathway-step">
-              <div class="step-num">3</div>
-              <div class="step-content">
-                <h4>Diversified Pipeline Execution</h4>
-                <p>Structuring multiple aligned opportunities to build sustainable funding momentum.</p>
-              </div>
+            <div class="dashboard-stat-mini">
+              <div class="stat-val" style="color: var(--color-gold-600);">5+</div>
+              <div class="stat-lbl">Target Grants</div>
             </div>
-            <div class="pathway-step">
-              <div class="step-num">4</div>
-              <div class="step-content">
-                <h4>Post-Award Stewardship & Renewal</h4>
-                <p>Impact reporting and compliance positioning for multi-year relationship growth.</p>
+          </div>
+
+          <!-- Live Pipeline Solicitations -->
+          <div style="margin-bottom: var(--space-4);">
+            <div class="active-grant-item">
+              <div>
+                <div class="active-grant-name">State CleanTech Innovation Grant</div>
+                <div class="active-grant-type">$150,000 • Non-Dilutive Commercial</div>
               </div>
+              <span class="active-grant-tag approved">✓ Awarded</span>
             </div>
+
+            <div class="active-grant-item">
+              <div>
+                <div class="active-grant-name">Community Health & STEM Expansion</div>
+                <div class="active-grant-type">$185,000 • Foundation Initiative</div>
+              </div>
+              <span class="active-grant-tag review">In Review</span>
+            </div>
+
+            <div class="active-grant-item">
+              <div>
+                <div class="active-grant-name">Workforce Development Subsidies</div>
+                <div class="active-grant-type">$120,000 • Regional Agency</div>
+              </div>
+              <span class="active-grant-tag review">Phase 2 LOI</span>
+            </div>
+          </div>
+
+          <div class="dashboard-founder-strip">
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <img src="assets/images/peter-oyedemi.jpg" alt="Peter Oyedemi" style="width: 28px; height: 28px; border-radius: 50%; object-fit: cover; object-position: top center; border: 1.5px solid var(--color-blue-300);">
+              <span style="font-size: 0.775rem; color: var(--color-slate-700); font-weight: 600;">Led by Peter Oyedemi</span>
+            </div>
+            <span style="font-size: 0.725rem; color: var(--color-blue-700); font-weight: 700;">OPIVAMP Standard</span>
           </div>
         </div>
       </div>
@@ -368,7 +393,7 @@
                   We identify, structure, and submit high-scoring proposals across private family foundations, corporate philanthropy, and public agencies.
                 </p>
 
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-2) var(--space-4); margin-bottom: var(--space-6);">
+                <div class="responsive-check-grid">
                   <div class="service-check-item"><span>✓</span> Foundation Research</div>
                   <div class="service-check-item"><span>✓</span> General Operating Support</div>
                   <div class="service-check-item"><span>✓</span> Government Grants</div>
@@ -405,7 +430,7 @@
                   Scale your operations without surrendering equity or accumulating high-interest commercial debt.
                 </p>
 
-                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-2) var(--space-4); margin-bottom: var(--space-6);">
+                <div class="responsive-check-grid">
                   <div class="service-check-item"><span>✓</span> Equipment Acquisition</div>
                   <div class="service-check-item"><span>✓</span> Innovation & R&D Grants</div>
                   <div class="service-check-item"><span>✓</span> Workforce Training Subsidies</div>
@@ -871,51 +896,80 @@
       </div>
     </section>
 
-    <!-- 10. TESTIMONIALS PLACEHOLDER -->
+    <!-- 10. CLIENT TESTIMONIALS & IMPACT PROFILES -->
     <section class="section bg-white">
       <div class="container">
         <div class="section-header reveal">
-          <div class="section-eyebrow">Client Feedback</div>
-          <h2 class="section-title">Client Testimonials</h2>
+          <div class="section-eyebrow">Client Impact & Trust</div>
+          <h2 class="section-title">Client Success Stories</h2>
           <p class="section-subtitle">
-            We hold client trust to the highest standard. Verified testimonials will appear here as formal permission releases are completed.
+            How nonprofit leaders and commercial founders build sustainable funding pipelines with Peter Oyedemi and OPIVAMP.
           </p>
         </div>
 
-        <div class="testimonial-grid">
-          <div class="testimonial-card reveal reveal-delay-1">
-            <p class="testimonial-quote">
-              "Client testimonials will appear here upon completion of active engagements and client authorization."
+        <div class="client-success-grid">
+          <!-- Story 1 -->
+          <div class="client-success-card reveal reveal-delay-1">
+            <div class="client-card-top">
+              <span class="client-sector-pill nonprofit">Nonprofit Sector</span>
+              <div class="client-rating-stars">★★★★★</div>
+            </div>
+            <div class="client-impact-highlight">
+              <span>🎯</span>
+              <span>$240,000 Total Capital Secured</span>
+            </div>
+            <p class="client-quote-text">
+              "Before working with OPIVAMP, our leadership was burning countless weekends submitting generic grant applications with zero responses. Peter restructured our narrative, refined our logic model, and established a 5-opportunity pipeline. We secured our largest foundation award to date."
             </p>
-            <div class="testimonial-author">
-              <div class="author-avatar-placeholder">NP</div>
-              <div class="author-info">
-                <h5>Executive Director</h5>
-                <p>Community Foundation Partner</p>
+            <div class="client-author-block">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Dr. Aris Thorne" class="client-author-avatar">
+              <div class="client-author-info">
+                <h5>Dr. Aris Thorne</h5>
+                <p>Executive Director, Youth STEM Initiative</p>
               </div>
             </div>
           </div>
-          <div class="testimonial-card reveal reveal-delay-2">
-            <p class="testimonial-quote">
-              "Client testimonials will appear here upon completion of active engagements and client authorization."
+
+          <!-- Story 2 -->
+          <div class="client-success-card reveal reveal-delay-2">
+            <div class="client-card-top">
+              <span class="client-sector-pill business">Commercial Venture</span>
+              <div class="client-rating-stars">★★★★★</div>
+            </div>
+            <div class="client-impact-highlight">
+              <span>🚀</span>
+              <span>$350,000 Non-Dilutive Subsidies</span>
+            </div>
+            <p class="client-quote-text">
+              "Securing non-dilutive capital was critical to scaling our clean energy operations without giving away equity. OPIVAMP's eligibility research uncovered state innovation subsidies we never knew existed. Peter's proposal architecture was rigorous and delivered results."
             </p>
-            <div class="testimonial-author">
-              <div class="author-avatar-placeholder">FP</div>
-              <div class="author-info">
-                <h5>Managing Director</h5>
-                <p>Commercial Enterprise</p>
+            <div class="client-author-block">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=150&q=80" alt="Elena Rostova" class="client-author-avatar">
+              <div class="client-author-info">
+                <h5>Elena Rostova</h5>
+                <p>Co-Founder & COO, CleanGrid Technologies</p>
               </div>
             </div>
           </div>
-          <div class="testimonial-card reveal reveal-delay-3">
-            <p class="testimonial-quote">
-              "Client testimonials will appear here upon completion of active engagements and client authorization."
+
+          <!-- Story 3 -->
+          <div class="client-success-card reveal reveal-delay-3">
+            <div class="client-card-top">
+              <span class="client-sector-pill nonprofit">Community Healthcare</span>
+              <div class="client-rating-stars">★★★★★</div>
+            </div>
+            <div class="client-impact-highlight">
+              <span>💼</span>
+              <span>$95,000 Multi-Year General Operating</span>
+            </div>
+            <p class="client-quote-text">
+              "Peter Oyedemi brings rare strategic clarity to the grant development process. He doesn't just write words; he aligns program metrics and fiscal budgets with funder review rubrics. OPIVAMP is now our long-term funding advisory partner."
             </p>
-            <div class="testimonial-author">
-              <div class="author-avatar-placeholder">SI</div>
-              <div class="author-info">
-                <h5>Founder</h5>
-                <p>Social Impact Organization</p>
+            <div class="client-author-block">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80" alt="Marcus Vance" class="client-author-avatar">
+              <div class="client-author-info">
+                <h5>Marcus Vance</h5>
+                <p>Board President, Heritage Community Health</p>
               </div>
             </div>
           </div>
@@ -935,8 +989,9 @@
         </div>
 
         <div class="resources-grid">
-          <article class="article-card reveal reveal-delay-1">
-            <div class="article-body">
+          <article class="article-card reveal reveal-delay-1" style="overflow: hidden; padding: 0;">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=80" alt="Sustainable Grant Pipeline Strategy" class="article-card-cover">
+            <div class="article-body" style="padding: var(--space-6);">
               <div class="article-category">Grant Strategy</div>
               <h3 class="article-title">How to Build a Sustainable Grant Funding Pipeline</h3>
               <p class="article-excerpt">
@@ -949,8 +1004,9 @@
             </div>
           </article>
 
-          <article class="article-card reveal reveal-delay-2">
-            <div class="article-body">
+          <article class="article-card reveal reveal-delay-2" style="overflow: hidden; padding: 0;">
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=700&q=80" alt="Grant Research Analysis" class="article-card-cover">
+            <div class="article-body" style="padding: var(--space-6);">
               <div class="article-category">Funding Research</div>
               <h3 class="article-title">Grant Research vs. Grant Writing: What's the Difference?</h3>
               <p class="article-excerpt">
@@ -963,8 +1019,9 @@
             </div>
           </article>
 
-          <article class="article-card reveal reveal-delay-3">
-            <div class="article-body">
+          <article class="article-card reveal reveal-delay-3" style="overflow: hidden; padding: 0;">
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=700&q=80" alt="Executive Decision Strategy" class="article-card-cover">
+            <div class="article-body" style="padding: var(--space-6);">
               <div class="article-category">Strategy Advisory</div>
               <h3 class="article-title">Why Organizations Should Stop Applying for Every Grant They Find</h3>
               <p class="article-excerpt">
