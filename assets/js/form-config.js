@@ -18,7 +18,7 @@
 
 const OPIVAMP_FORM_CONFIG = {
   // Primary email address to receive all submissions
-  recipientEmail: "inquiries@opivamp.com",
+  recipientEmail: "opivamp@gmail.com",
 
   // Optional secondary email to CC (leave as "" if none)
   ccEmail: "",
