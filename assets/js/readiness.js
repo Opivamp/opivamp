@@ -1,5 +1,6 @@
 /**
  * OPIVAMP Interactive Funding Readiness Self-Assessment
+ * Calculates readiness tiers and provides real-time scorecard report submission.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -16,16 +17,29 @@ document.addEventListener('DOMContentLoaded', () => {
   const recommendationListEl = document.getElementById('recommendationList');
   const consultBtn = document.getElementById('readinessConsultBtn');
 
+  // Track latest score state for submission
+  let currentAssessmentState = {
+    percent: 0,
+    checkedCount: 0,
+    totalCount: checkboxes.length,
+    tier: '',
+    checkedItems: [],
+    uncheckedItems: []
+  };
+
   const updateScore = () => {
     const total = checkboxes.length;
     let checked = 0;
+    const checkedLabels = [];
     const uncheckedLabels = [];
 
     checkboxes.forEach((cb) => {
+      const labelEl = cb.closest('.assessment-item').querySelector('h4');
+      const label = labelEl ? labelEl.textContent : cb.value;
       if (cb.checked) {
         checked++;
+        checkedLabels.push(label);
       } else {
-        const label = cb.closest('.assessment-item').querySelector('h4').textContent;
         uncheckedLabels.push(label);
       }
     });
@@ -39,7 +53,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Tier calculation
     let tier = '';
     let description = '';
-    let colorClass = '';
 
     if (percent >= 80) {
       tier = 'High Readiness — Competitive Candidate';
@@ -76,12 +89,142 @@ document.addEventListener('DOMContentLoaded', () => {
     if (consultBtn) {
       consultBtn.href = `consultation.html?readiness=${percent}&stage=${encodeURIComponent(tier)}`;
     }
+
+    // Update state object
+    currentAssessmentState = {
+      percent,
+      checkedCount: checked,
+      totalCount: total,
+      tier,
+      checkedItems: checkedLabels,
+      uncheckedItems: uncheckedLabels
+    };
   };
 
   checkboxes.forEach((cb) => {
     cb.addEventListener('change', updateScore);
   });
 
-  // Run once to show initial state if any are checked
+  // Run once to initialize
   updateScore();
+
+  // 2. Email Scorecard Report Form
+  const scorecardForm = document.getElementById('emailScorecardForm');
+  const scorecardStatus = document.getElementById('scorecardStatusMsg');
+
+  if (scorecardForm) {
+    scorecardForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(scorecardForm);
+      const data = Object.fromEntries(formData.entries());
+
+      if (data._honey) {
+        console.warn('Bot blocked.');
+        return;
+      }
+
+      if (!data.name || !data.email || !data.organization) {
+        if (scorecardStatus) {
+          scorecardStatus.style.display = 'block';
+          scorecardStatus.style.background = 'rgba(239, 68, 68, 0.2)';
+          scorecardStatus.style.color = '#fecaca';
+          scorecardStatus.textContent = 'Please provide your name, organization, and email address.';
+        }
+        return;
+      }
+
+      const submitBtn = scorecardForm.querySelector('button[type="submit"]');
+      const originalBtnHtml = submitBtn.innerHTML;
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<span class="spinner"></span> &nbsp; Sending...';
+
+      if (scorecardStatus) {
+        scorecardStatus.style.display = 'none';
+      }
+
+      const config = typeof OPIVAMP_FORM_CONFIG !== 'undefined' ? OPIVAMP_FORM_CONFIG : {
+        recipientEmail: 'inquiries@opivamp.com',
+        getEndpoint: () => 'https://formsubmit.co/ajax/inquiries@opivamp.com',
+        subjects: { readiness: 'Funding Readiness Assessment Report' },
+        autoresponse: { readiness: 'Thank you for completing your readiness assessment with OPIVAMP.' }
+      };
+
+      const payload = {
+        _subject: `${config.subjects.readiness}: ${currentAssessmentState.percent}% - ${data.name} (${data.organization})`,
+        _template: 'table',
+        _captcha: 'false',
+        _replyto: data.email,
+        _autoresponse: `${config.autoresponse.readiness} Your score: ${currentAssessmentState.percent}% (${currentAssessmentState.tier}). Our team will review your preparation roadmap.`,
+        "Contact Name": data.name,
+        "Organization Name": data.organization,
+        "Work Email": data.email,
+        "Readiness Score": `${currentAssessmentState.percent}% (${currentAssessmentState.checkedCount} of ${currentAssessmentState.totalCount} Core Elements)`,
+        "Readiness Tier": currentAssessmentState.tier,
+        "Prepared Elements": currentAssessmentState.checkedItems.join('; ') || 'None selected',
+        "Priority Improvement Gaps": currentAssessmentState.uncheckedItems.join('; ') || 'All elements prepared',
+        "Source Page": "readiness.html",
+        "Submitted At": new Date().toLocaleString()
+      };
+
+      if (config.ccEmail) {
+        payload._cc = config.ccEmail;
+      }
+
+      // Redundant local storage backup
+      try {
+        const existingLeads = JSON.parse(localStorage.getItem('opivamp_readiness_leads') || '[]');
+        existingLeads.push({ ...data, ...currentAssessmentState, timestamp: new Date().toISOString() });
+        localStorage.setItem('opivamp_readiness_leads', JSON.stringify(existingLeads));
+      } catch (err) {
+        console.warn('LocalStorage error:', err);
+      }
+
+      try {
+        const response = await fetch(config.getEndpoint(), {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+
+        if (result.success === 'true' || result.success === true || (result.message && result.message.includes('Activation'))) {
+          if (scorecardStatus) {
+            scorecardStatus.style.display = 'block';
+            scorecardStatus.style.background = 'rgba(16, 185, 129, 0.2)';
+            scorecardStatus.style.color = '#a7f3d0';
+            scorecardStatus.innerHTML = `✓ <strong>Scorecard Dispatched!</strong> We've logged your ${currentAssessmentState.percent}% score for Victor Peter's review. Check your inbox for confirmation.`;
+          }
+
+          if (window.showToast) {
+            window.showToast('Your readiness breakdown has been emailed! Book below to review it.');
+          }
+
+          // Update the consultation button to include client info
+          if (consultBtn) {
+            consultBtn.href = `consultation.html?readiness=${currentAssessmentState.percent}&stage=${encodeURIComponent(currentAssessmentState.tier)}`;
+          }
+
+          scorecardForm.reset();
+        } else {
+          throw new Error(result.message || 'Submission failed');
+        }
+      } catch (err) {
+        console.error('Scorecard submission error:', err);
+        if (scorecardStatus) {
+          scorecardStatus.style.display = 'block';
+          scorecardStatus.style.background = 'rgba(245, 158, 11, 0.2)';
+          scorecardStatus.style.color = '#fde68a';
+          scorecardStatus.innerHTML = `Scorecard saved locally! You can also email Victor directly at <a href="mailto:${config.recipientEmail}" style="color:#ffffff; text-decoration:underline;">${config.recipientEmail}</a>.`;
+        }
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHtml;
+      }
+    });
+  }
 });

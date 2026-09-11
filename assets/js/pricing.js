@@ -48,6 +48,11 @@ document.addEventListener('DOMContentLoaded', () => {
     if (finalTotalDisplay) {
       finalTotalDisplay.textContent = `$${grandTotal.toLocaleString()}`;
     }
+
+    const planBtn = document.getElementById('pricingCustomPlanBtn');
+    if (planBtn) {
+      planBtn.href = `consultation.html?estimate=%24${grandTotal.toLocaleString()}&opps=${opps}`;
+    }
   };
 
   oppSlider.addEventListener('input', calculateEstimate);

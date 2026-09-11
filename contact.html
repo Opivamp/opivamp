@@ -195,6 +195,12 @@
             </p>
 
             <form id="contactAssessmentForm">
+              <!-- Anti-Spam Honeypot -->
+              <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+
+              <!-- Submission Status Feedback -->
+              <div id="contactFormStatus" style="display:none; margin-bottom: 1rem; padding: 0.85rem; border-radius: 6px; font-size: 0.875rem;"></div>
+
               <div class="form-grid-2">
                 <div class="form-group">
                   <label for="contactName">Your Full Name <span class="required">*</span></label>
@@ -406,6 +412,31 @@
     </div>
   </footer>
 
+  <!-- Contact Success Confirmation Modal -->
+  <div id="contactConfirmationModal" class="modal-backdrop" aria-hidden="true" role="dialog">
+    <div class="modal-box">
+      <button id="closeContactModalBtn" class="modal-close-btn" aria-label="Close dialog">&times;</button>
+      <div style="text-align: center; margin-bottom: var(--space-4);">
+        <div style="width: 56px; height: 56px; background: var(--color-success-bg); color: var(--color-success); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto var(--space-3);">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        </div>
+        <h3 style="color: var(--color-navy-950); margin-bottom: var(--space-1);">Assessment Request Received</h3>
+        <p style="font-size: 0.875rem; color: var(--color-slate-600);">
+          Thank you for reaching out. Victor Peter and the OPIVAMP advisory team have received your organizational information and will respond with an initial strategic fit evaluation within 24 business hours.
+        </p>
+      </div>
+
+      <div id="contactSummaryDetails">
+        <!-- Populated dynamically by JavaScript -->
+      </div>
+
+      <div style="display: flex; gap: var(--space-3); justify-content: center;">
+        <button id="closeContactModalBtn2" class="btn btn-primary" style="width: 100%;">Done</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/form-config.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/consultation.js"></script>
 </body>
