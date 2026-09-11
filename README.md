@@ -10,9 +10,9 @@
 
 ## 🌟 Brand Overview
 
-- **Brand Name**: OPIVAMP
+- **Brand Name**: OPIVAMP GRANTS
 - **Positioning**: Funding Strategy • Grant Research • Grant Writing • Application Support • Funding Development
-- **Leadership**: Victor Peter (*Founder & Funding Strategist*)
+- **Leadership**: Peter Oyedemi (*Founder of OPIVAMP GRANTS & Lead Funding Strategist*)
 - **Target Audience**:
   - **Nonprofit Organizations**: 501(c)(3) charities, community-based organizations, social service agencies, educational and youth programs.
   - **For-Profit Businesses**: Commercial startups, small businesses, minority- and women-owned enterprises (MBE/WBE), and scaling companies seeking non-dilutive capital, innovation grants, and workforce subsidies.
@@ -24,7 +24,7 @@
 | File | Page Description |
 | :--- | :--- |
 | [`index.html`](index.html) | **Homepage**: High-impact architectural hero, dual CTAs, interactive audience tab switcher, 4 service pillars, 3-phase process, pipeline diagram, and closing banner. |
-| [`about.html`](about.html) | **About OPIVAMP**: Founder profile (Victor Peter), guiding principles, and modular advisory team framework. |
+| [`about.html`](about.html) | **About OPIVAMP**: Founder profile (Peter Oyedemi), guiding principles, and modular advisory team framework. |
 | [`services.html`](services.html) | **Services**: Research & Identification, Proposal Development, Funding Strategy, and Post-Award Reporting. |
 | [`nonprofits.html`](nonprofits.html) | **For Nonprofits**: Specialized advisory for 501(c)(3) entities, community foundations, and social impact programs. |
 | [`businesses.html`](businesses.html) | **For Businesses**: Non-dilutive capital, equipment subsidies, and commercial R&D grant strategy. |

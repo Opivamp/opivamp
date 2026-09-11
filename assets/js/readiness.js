@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
             scorecardStatus.style.display = 'block';
             scorecardStatus.style.background = 'rgba(16, 185, 129, 0.2)';
             scorecardStatus.style.color = '#a7f3d0';
-            scorecardStatus.innerHTML = `✓ <strong>Scorecard Dispatched!</strong> We've logged your ${currentAssessmentState.percent}% score for Victor Peter's review. Check your inbox for confirmation.`;
+            scorecardStatus.innerHTML = `✓ <strong>Scorecard Dispatched!</strong> We've logged your ${currentAssessmentState.percent}% score for Peter Oyedemi's review. Check your inbox for confirmation.`;
           }
 
           if (window.showToast) {
@@ -219,7 +219,7 @@ document.addEventListener('DOMContentLoaded', () => {
           scorecardStatus.style.display = 'block';
           scorecardStatus.style.background = 'rgba(245, 158, 11, 0.2)';
           scorecardStatus.style.color = '#fde68a';
-          scorecardStatus.innerHTML = `Scorecard saved locally! You can also email Victor directly at <a href="mailto:${config.recipientEmail}" style="color:#ffffff; text-decoration:underline;">${config.recipientEmail}</a>.`;
+          scorecardStatus.innerHTML = `Scorecard saved locally! You can also email Peter directly at <a href="mailto:${config.recipientEmail}" style="color:#ffffff; text-decoration:underline;">${config.recipientEmail}</a>.`;
         }
       } finally {
         submitBtn.disabled = false;

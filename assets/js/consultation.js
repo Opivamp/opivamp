@@ -192,7 +192,7 @@ function initConsultationForm() {
         if (modal) {
           modal.classList.add('open');
         } else if (window.showToast) {
-          window.showToast('Your consultation request has been reserved! Victor Peter will confirm within 1 business day.');
+          window.showToast('Your consultation request has been reserved! Peter Oyedemi will confirm within 1 business day.');
         }
 
         form.reset();
@@ -213,10 +213,10 @@ function initConsultationForm() {
         statusBox.style.display = 'block';
         statusBox.style.background = '#fef3c7';
         statusBox.style.color = '#92400e';
-        statusBox.innerHTML = `Your booking was saved locally, but direct transmission encountered a network delay. You can also reach Victor Peter directly at <a href="mailto:${config.recipientEmail}" style="font-weight:700; color:#1e40af;">${config.recipientEmail}</a>.`;
+        statusBox.innerHTML = `Your booking was saved locally, but direct transmission encountered a network delay. You can also reach Peter Oyedemi directly at <a href="mailto:${config.recipientEmail}" style="font-weight:700; color:#1e40af;">${config.recipientEmail}</a>.`;
       }
       if (window.showToast) {
-        window.showToast('Submission saved! Victor Peter has been notified.');
+        window.showToast('Submission saved! Peter Oyedemi has been notified.');
       }
     } finally {
       submitBtn.disabled = false;
@@ -373,10 +373,10 @@ function initContactForm() {
         statusBox.style.display = 'block';
         statusBox.style.background = '#fef3c7';
         statusBox.style.color = '#92400e';
-        statusBox.innerHTML = `Your inquiry has been safely logged. If urgent, you can also reach Victor Peter directly at <a href="mailto:${config.recipientEmail}" style="font-weight:700; color:#1e40af;">${config.recipientEmail}</a>.`;
+        statusBox.innerHTML = `Your inquiry has been safely logged. If urgent, you can also reach Peter Oyedemi directly at <a href="mailto:${config.recipientEmail}" style="font-weight:700; color:#1e40af;">${config.recipientEmail}</a>.`;
       }
       if (window.showToast) {
-        window.showToast('Inquiry logged successfully. Victor Peter has been notified.');
+        window.showToast('Inquiry logged successfully. Peter Oyedemi has been notified.');
       }
     } finally {
       submitBtn.disabled = false;

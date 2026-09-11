@@ -6,9 +6,9 @@
  * - Consultation Booking Form (consultation.html)
  * - Funding Readiness Scorecard (readiness.html)
  * 
- * NOTE FOR VICTOR / SITE OWNER:
+ * NOTE FOR PETER / SITE OWNER:
  * Enter the email address where you want to receive client inquiries below.
- * You can use inquiries@opivamp.com or your personal Gmail / Outlook address.
+ * You can use opivamp@opivamp.com or your personal Gmail / Outlook address.
  * 
  * First-Time Activation:
  * The very first time a form is submitted to an email address, FormSubmit
@@ -24,7 +24,7 @@ const OPIVAMP_FORM_CONFIG = {
   ccEmail: "opivamp@gmail.com",
 
   // Business branding
-  businessName: "OPIVAMP Funding Strategy & Grant Consulting",
+  businessName: "OPIVAMP GRANTS — Global Funding Strategy & Consulting",
   contactPhone: "(555) 019-2834",
 
   // Email subject line prefixes
@@ -36,9 +36,9 @@ const OPIVAMP_FORM_CONFIG = {
 
   // Autoresponse templates sent back to the prospect
   autoresponse: {
-    contact: "Thank you for requesting a Strategic Funding Assessment from OPIVAMP. Victor Peter and our advisory team have received your organizational details and will provide an initial fit evaluation within 24 business hours.",
-    consultation: "Thank you for scheduling a strategy consultation with OPIVAMP. Victor Peter has received your requested date, time, and project notes. We will review your submission and email your direct video meeting access link within 1 business day.",
-    readiness: "Thank you for assessing your funding readiness with OPIVAMP. Your full scorecard breakdown and priority preparation recommendations have been logged."
+    contact: "Thank you for requesting a Strategic Funding Assessment from OPIVAMP GRANTS. Peter Oyedemi and our advisory team have received your organizational details and will provide an initial fit evaluation within 24 business hours.",
+    consultation: "Thank you for scheduling a strategy consultation with OPIVAMP GRANTS. Peter Oyedemi has received your requested date, time, and project notes. We will review your submission and email your direct video meeting access link within 1 business day.",
+    readiness: "Thank you for assessing your funding readiness with OPIVAMP GRANTS. Your full scorecard breakdown and priority preparation recommendations have been logged."
   },
 
   // Helper to get the submission endpoint
