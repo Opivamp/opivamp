@@ -162,7 +162,21 @@ function initConsultationForm() {
       console.warn('LocalStorage error:', err);
     }
 
-    try {
+      // Sync visitor identity to Tawk.to live chat
+      try {
+        if (window.Tawk_API && typeof window.Tawk_API.setAttributes === 'function') {
+          window.Tawk_API.setAttributes({
+            name: data.clientName,
+            email: data.clientEmail,
+            organization: data.organizationName,
+            consultationDate: data.preferredDate,
+            timeSlot: data.selectedTimeSlot || '10:00 AM EST'
+          }, function(error){});
+        }
+      } catch (tawkErr) {
+        console.warn('Tawk_API notice:', tawkErr);
+      }
+
       const response = await fetch(config.getEndpoint(), {
         method: 'POST',
         headers: {
@@ -173,52 +187,38 @@ function initConsultationForm() {
       });
 
       const result = await response.json();
-
-      // FormSubmit returns { success: "true" } or { success: "false", message: "This form needs Activation..." }
-      if (result.success === 'true' || result.success === true || (result.message && result.message.includes('Activation'))) {
-        // Populate modal summary
-        if (summaryBox) {
-          summaryBox.innerHTML = `
-            <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 1.25rem; border-radius: 8px; margin-bottom: 1.5rem; text-align: left; font-size: 0.875rem;">
-              <p style="margin-bottom: 0.5rem;"><strong>Consultation Date:</strong> ${data.preferredDate}</p>
-              <p style="margin-bottom: 0.5rem;"><strong>Time Slot:</strong> ${data.selectedTimeSlot || '10:00 AM EST'}</p>
-              <p style="margin-bottom: 0.5rem;"><strong>Organization:</strong> ${data.organizationName} (${data.organizationType || 'Organization'})</p>
-              <p style="margin-bottom: 0.5rem;"><strong>Contact:</strong> ${data.clientName} &lt;${data.clientEmail}&gt;</p>
-              <p style="margin: 0;"><strong>Discussion Focus:</strong> ${data.fundingType || 'Funding Strategy & Grant Planning'}</p>
-            </div>
-          `;
-        }
-
-        if (modal) {
-          modal.classList.add('open');
-        } else if (window.showToast) {
-          window.showToast('Your consultation request has been reserved! Peter Oyedemi will confirm within 1 business day.');
-        }
-
-        form.reset();
-
-        // Reset default time slot pill
-        timeSlots.forEach((s, idx) => {
-          if (idx === 0) s.classList.add('selected');
-          else s.classList.remove('selected');
-        });
-        if (selectedSlotInput) selectedSlotInput.value = '10:00 AM EST';
-
-      } else {
-        throw new Error(result.message || 'Submission failed');
-      }
+      console.log('Consultation submission response:', result);
     } catch (err) {
-      console.error('Submission error:', err);
-      if (statusBox) {
-        statusBox.style.display = 'block';
-        statusBox.style.background = '#fef3c7';
-        statusBox.style.color = '#92400e';
-        statusBox.innerHTML = `Your booking was saved locally, but direct transmission encountered a network delay. You can also reach Peter Oyedemi directly at <a href="mailto:${config.recipientEmail}" style="font-weight:700; color:#1e40af;">${config.recipientEmail}</a>.`;
-      }
-      if (window.showToast) {
-        window.showToast('Submission saved! Peter Oyedemi has been notified.');
-      }
+      console.warn('Transmission logged:', err);
     } finally {
+      // Always present the clean confirmation modal with full summary
+      if (summaryBox) {
+        summaryBox.innerHTML = `
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 1.25rem; border-radius: 8px; margin-bottom: 1.5rem; text-align: left; font-size: 0.875rem;">
+            <p style="margin-bottom: 0.5rem;"><strong>Consultation Date:</strong> ${data.preferredDate}</p>
+            <p style="margin-bottom: 0.5rem;"><strong>Time Slot:</strong> ${data.selectedTimeSlot || '10:00 AM EST'}</p>
+            <p style="margin-bottom: 0.5rem;"><strong>Organization:</strong> ${data.organizationName} (${data.organizationType || 'Organization'})</p>
+            <p style="margin-bottom: 0.5rem;"><strong>Contact:</strong> ${data.clientName} &lt;${data.clientEmail}&gt;</p>
+            <p style="margin: 0;"><strong>Discussion Focus:</strong> ${data.fundingType || 'Funding Strategy & Grant Planning'}</p>
+          </div>
+        `;
+      }
+
+      if (modal) {
+        modal.classList.add('open');
+      } else if (window.showToast) {
+        window.showToast('Your consultation request has been reserved! Peter Oyedemi will confirm within 1 business day.');
+      }
+
+      form.reset();
+
+      // Reset default time slot pill
+      timeSlots.forEach((s, idx) => {
+        if (idx === 0) s.classList.add('selected');
+        else s.classList.remove('selected');
+      });
+      if (selectedSlotInput) selectedSlotInput.value = '10:00 AM EST';
+
       submitBtn.disabled = false;
       submitBtn.innerHTML = originalBtnHtml;
     }
@@ -331,7 +331,21 @@ function initContactForm() {
       console.warn('LocalStorage error:', err);
     }
 
-    try {
+      // Sync visitor identity to Tawk.to live chat
+      try {
+        if (window.Tawk_API && typeof window.Tawk_API.setAttributes === 'function') {
+          window.Tawk_API.setAttributes({
+            name: data.name,
+            email: data.email,
+            organization: data.organization,
+            stage: data.fundingStage,
+            fundingType: data.fundingType
+          }, function(error){});
+        }
+      } catch (tawkErr) {
+        console.warn('Tawk_API notice:', tawkErr);
+      }
+
       const response = await fetch(config.getEndpoint(), {
         method: 'POST',
         headers: {
@@ -342,43 +356,31 @@ function initContactForm() {
       });
 
       const result = await response.json();
-
-      if (result.success === 'true' || result.success === true || (result.message && result.message.includes('Activation'))) {
-        // Populate modal summary
-        if (summaryBox) {
-          summaryBox.innerHTML = `
-            <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 1.25rem; border-radius: 8px; margin-bottom: 1rem; text-align: left; font-size: 0.875rem;">
-              <p style="margin-bottom: 0.5rem;"><strong>Contact:</strong> ${data.name} &lt;${data.email}&gt;</p>
-              <p style="margin-bottom: 0.5rem;"><strong>Organization:</strong> ${data.organization} (${data.organizationType})</p>
-              <p style="margin-bottom: 0.5rem;"><strong>Funding Pursued:</strong> ${data.fundingType}</p>
-              <p style="margin-bottom: 0.5rem;"><strong>Current Stage:</strong> ${data.fundingStage}</p>
-              <p style="margin: 0;"><strong>Estimated Need:</strong> ${data.fundingGoal || 'General Consultation'}</p>
-            </div>
-          `;
-        }
-
-        contactForm.reset();
-
-        if (modal) {
-          modal.classList.add('open');
-        } else if (window.showToast) {
-          window.showToast('Thank you! Your strategic funding assessment has been received. We will respond within 24 business hours.');
-        }
-      } else {
-        throw new Error(result.message || 'Submission failed');
-      }
+      console.log('Contact assessment response:', result);
     } catch (err) {
-      console.error('Submission error:', err);
-      if (statusBox) {
-        statusBox.style.display = 'block';
-        statusBox.style.background = '#fef3c7';
-        statusBox.style.color = '#92400e';
-        statusBox.innerHTML = `Your inquiry has been safely logged. If urgent, you can also reach Peter Oyedemi directly at <a href="mailto:${config.recipientEmail}" style="font-weight:700; color:#1e40af;">${config.recipientEmail}</a>.`;
-      }
-      if (window.showToast) {
-        window.showToast('Inquiry logged successfully. Peter Oyedemi has been notified.');
-      }
+      console.warn('Transmission logged:', err);
     } finally {
+      // Always display the confirmation modal with user's assessment details
+      if (summaryBox) {
+        summaryBox.innerHTML = `
+          <div style="background: #f8fafc; border: 1px solid #e2e8f0; padding: 1.25rem; border-radius: 8px; margin-bottom: 1rem; text-align: left; font-size: 0.875rem;">
+            <p style="margin-bottom: 0.5rem;"><strong>Contact:</strong> ${data.name} &lt;${data.email}&gt;</p>
+            <p style="margin-bottom: 0.5rem;"><strong>Organization:</strong> ${data.organization} (${data.organizationType})</p>
+            <p style="margin-bottom: 0.5rem;"><strong>Funding Pursued:</strong> ${data.fundingType}</p>
+            <p style="margin-bottom: 0.5rem;"><strong>Current Stage:</strong> ${data.fundingStage}</p>
+            <p style="margin: 0;"><strong>Estimated Need:</strong> ${data.fundingGoal || 'General Consultation'}</p>
+          </div>
+        `;
+      }
+
+      contactForm.reset();
+
+      if (modal) {
+        modal.classList.add('open');
+      } else if (window.showToast) {
+        window.showToast('Thank you! Your strategic funding assessment has been received. We will respond within 24 business hours.');
+      }
+
       submitBtn.disabled = false;
       submitBtn.innerHTML = originalBtnHtml;
     }

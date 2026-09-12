@@ -236,3 +236,29 @@ window.showToast = function(message, duration = 4000) {
     toast.classList.remove('show');
   }, duration);
 };
+
+// 8. Tawk.to Live Chat Integration
+var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+(function() {
+  var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+  s1.async = true;
+  s1.src = 'https://embed.tawk.to/6aa4995d0f09ed34497bc706/1k29fe5gn';
+  s1.charset = 'UTF-8';
+  s1.setAttribute('crossorigin', '*');
+  s0.parentNode.insertBefore(s1, s0);
+})();
+
+// Global helper to open Tawk.to chat widget from any button or link
+window.openLiveChat = function(e) {
+  if (e && e.preventDefault) e.preventDefault();
+  if (window.Tawk_API && typeof window.Tawk_API.maximize === 'function') {
+    window.Tawk_API.maximize();
+  } else {
+    setTimeout(() => {
+      if (window.Tawk_API && typeof window.Tawk_API.maximize === 'function') {
+        window.Tawk_API.maximize();
+      }
+    }, 600);
+  }
+};
+

@@ -430,8 +430,12 @@
         <!-- Populated dynamically by JavaScript -->
       </div>
 
-      <div style="display: flex; gap: var(--space-3); justify-content: center;">
-        <button id="closeContactModalBtn2" class="btn btn-primary" style="width: 100%;">Done</button>
+      <div style="display: flex; gap: var(--space-3); justify-content: center; flex-direction: column;">
+        <button type="button" class="btn btn-primary" onclick="window.openLiveChat();" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          <span>💬 Chat Live with Peter & Grace Now</span>
+        </button>
+        <button id="closeContactModalBtn2" class="btn btn-secondary" style="width: 100%;">Done</button>
       </div>
     </div>
   </div>
@@ -439,6 +443,18 @@
   <script src="assets/js/form-config.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/consultation.js"></script>
+  <!-- Tawk.to Live Chat -->
+  <script type="text/javascript">
+  var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+  (function(){
+  var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+  s1.async = true;
+  s1.src = 'https://embed.tawk.to/6aa4995d0f09ed34497bc706/1k29fe5gn';
+  s1.charset = 'UTF-8';
+  s1.setAttribute('crossorigin', '*');
+  s0.parentNode.insertBefore(s1, s0);
+  })();
+  </script>
 </body>
 </html>
 
