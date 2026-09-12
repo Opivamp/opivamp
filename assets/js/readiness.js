@@ -180,6 +180,20 @@ document.addEventListener('DOMContentLoaded', () => {
         console.warn('LocalStorage error:', err);
       }
 
+      // Sync lead to Tawk.to live chat
+      try {
+        if (window.Tawk_API && typeof window.Tawk_API.setAttributes === 'function') {
+          window.Tawk_API.setAttributes({
+            name: data.name,
+            email: data.email,
+            organization: data.organization,
+            'Readiness Score': `${currentAssessmentState.percent}% (${currentAssessmentState.tier})`
+          }, function(error){});
+        }
+      } catch (tawkErr) {
+        console.warn('Tawk_API notice:', tawkErr);
+      }
+
       try {
         const response = await fetch(config.getEndpoint(), {
           method: 'POST',

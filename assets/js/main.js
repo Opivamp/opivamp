@@ -237,8 +237,38 @@ window.showToast = function(message, duration = 4000) {
   }, duration);
 };
 
-// 8. Tawk.to Live Chat Integration
+// 8. Tawk.to Live Chat Integration & Lead Pre-Chat Synchronization
 var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+
+// Prefill visitor data if client has already filled a form on the site
+try {
+  const cachedLead = JSON.parse(localStorage.getItem('opivamp_bookings') || '[]').slice(-1)[0]
+                  || JSON.parse(localStorage.getItem('opivamp_inquiries') || '[]').slice(-1)[0]
+                  || JSON.parse(localStorage.getItem('opivamp_readiness_leads') || '[]').slice(-1)[0];
+  if (cachedLead && (cachedLead.clientEmail || cachedLead.email)) {
+    Tawk_API.visitor = {
+      name: cachedLead.clientName || cachedLead.name || '',
+      email: cachedLead.clientEmail || cachedLead.email || ''
+    };
+  }
+} catch (e) {
+  console.warn('Lead cache notice:', e);
+}
+
+Tawk_API.onLoad = function() {
+  try {
+    const cachedLead = JSON.parse(localStorage.getItem('opivamp_bookings') || '[]').slice(-1)[0]
+                    || JSON.parse(localStorage.getItem('opivamp_inquiries') || '[]').slice(-1)[0]
+                    || JSON.parse(localStorage.getItem('opivamp_readiness_leads') || '[]').slice(-1)[0];
+    if (cachedLead && typeof Tawk_API.setAttributes === 'function') {
+      Tawk_API.setAttributes({
+        'Organization': cachedLead.organizationName || cachedLead.organization || 'Inquiry',
+        'Organization Type': cachedLead.organizationType || 'Nonprofit/Business'
+      }, function(error){});
+    }
+  } catch (e) {}
+};
+
 (function() {
   var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
   s1.async = true;
