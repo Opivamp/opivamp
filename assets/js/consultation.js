@@ -162,6 +162,7 @@ function initConsultationForm() {
       console.warn('LocalStorage error:', err);
     }
 
+    try {
       // Sync visitor identity to Tawk.to live chat
       try {
         if (window.Tawk_API && typeof window.Tawk_API.setAttributes === 'function') {
@@ -331,6 +332,7 @@ function initContactForm() {
       console.warn('LocalStorage error:', err);
     }
 
+    try {
       // Sync visitor identity to Tawk.to live chat
       try {
         if (window.Tawk_API && typeof window.Tawk_API.setAttributes === 'function') {
