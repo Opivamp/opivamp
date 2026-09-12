@@ -21,7 +21,7 @@ const OPIVAMP_FORM_CONFIG = {
   recipientEmail: "opivamp@opivamp.com",
 
   // Optional secondary email to CC (receives automatic copy)
-  ccEmail: "opivamp@gmail.com",
+  ccEmail: "oyedemipeter5@gmail.com, Oluwatunmibigrace12@gmail.com",
 
   // Business branding
   businessName: "OPIVAMP GRANTS — Global Funding Strategy & Consulting",
@@ -36,8 +36,8 @@ const OPIVAMP_FORM_CONFIG = {
 
   // Autoresponse templates sent back to the prospect
   autoresponse: {
-    contact: "Thank you for requesting a Strategic Funding Assessment from OPIVAMP GRANTS. Peter Oyedemi and our advisory team have received your organizational details and will provide an initial fit evaluation within 24 business hours.",
-    consultation: "Thank you for scheduling a strategy consultation with OPIVAMP GRANTS. Peter Oyedemi has received your requested date, time, and project notes. We will review your submission and email your direct video meeting access link within 1 business day.",
+    contact: "Thank you for requesting a Strategic Funding Assessment from OPIVAMP GRANTS. Founders Peter Oyedemi, Oluwatunmibi Grace Elismile, and our advisory team have received your organizational details and will provide an initial fit evaluation within 24 business hours.",
+    consultation: "Thank you for scheduling a strategy consultation with OPIVAMP GRANTS. Founders Peter Oyedemi and Oluwatunmibi Grace Elismile have received your requested date, time, and project notes. We will review your submission and email your direct video meeting access link within 1 business day.",
     readiness: "Thank you for assessing your funding readiness with OPIVAMP GRANTS. Your full scorecard breakdown and priority preparation recommendations have been logged."
   },
 
