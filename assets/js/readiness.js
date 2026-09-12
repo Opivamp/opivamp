@@ -151,14 +151,16 @@ document.addEventListener('DOMContentLoaded', () => {
       };
 
       const payload = {
-        _subject: `${config.subjects.readiness}: ${currentAssessmentState.percent}% - ${data.name} (${data.organization})`,
+        name: data.name,
+        email: data.email,
+        _replyto: data.email,
+        _subject: `${config.subjects.readiness}: ${currentAssessmentState.percent}% - ${data.name} (${data.email})`,
         _template: 'table',
         _captcha: 'false',
-        _replyto: data.email,
         _autoresponse: `${config.autoresponse.readiness} Your score: ${currentAssessmentState.percent}% (${currentAssessmentState.tier}). Our team will review your preparation roadmap.`,
         "Contact Name": data.name,
+        "Contact Email (Direct Reply)": data.email,
         "Organization Name": data.organization,
-        "Work Email": data.email,
         "Readiness Score": `${currentAssessmentState.percent}% (${currentAssessmentState.checkedCount} of ${currentAssessmentState.totalCount} Core Elements)`,
         "Readiness Tier": currentAssessmentState.tier,
         "Prepared Elements": currentAssessmentState.checkedItems.join('; ') || 'None selected',

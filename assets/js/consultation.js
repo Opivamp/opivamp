@@ -131,13 +131,15 @@ function initConsultationForm() {
     };
 
     const payload = {
-      _subject: `${config.subjects.consultation}: ${data.clientName} - ${data.organizationName}`,
+      name: data.clientName,
+      email: data.clientEmail,
+      _replyto: data.clientEmail,
+      _subject: `${config.subjects.consultation}: ${data.clientName} (${data.clientEmail}) - ${data.organizationName}`,
       _template: 'table',
       _captcha: 'false',
-      _replyto: data.clientEmail,
       _autoresponse: config.autoresponse.consultation,
       "Client Name": data.clientName,
-      "Work Email": data.clientEmail,
+      "Client Email (Direct Reply)": data.clientEmail,
       "Organization Name": data.organizationName,
       "Organization Type": data.organizationType || 'Not specified',
       "Requested Date": data.preferredDate,
@@ -300,14 +302,16 @@ function initContactForm() {
     };
 
     const payload = {
-      _subject: `${config.subjects.contact}: ${data.name} - ${data.organization}`,
+      name: data.name,
+      email: data.email,
+      _replyto: data.email,
+      _subject: `${config.subjects.contact}: ${data.name} (${data.email}) - ${data.organization}`,
       _template: 'table',
       _captcha: 'false',
-      _replyto: data.email,
       _autoresponse: config.autoresponse.contact,
-      "Full Name": data.name,
+      "Contact Name": data.name,
+      "Contact Email (Direct Reply)": data.email,
       "Organization": data.organization,
-      "Work Email": data.email,
       "Phone": data.phone || 'Not provided',
       "Organization Type": data.organizationType,
       "Website": data.website || 'Not provided',
